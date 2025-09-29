@@ -1,6 +1,9 @@
-sudo apt install openssh-server
+if [ -z "$SUDO_USER" ]; then
+    echo "error: This script must be run with sudo (e.g., 'sudo ./script_name.sh')."
+    exit 1
+fi
 
-SUDO_USER="NAMEOFUSER"  
+sudo apt install openssh-server
 
 echo "Ubuntu Server Setup with XFCE..."
 
